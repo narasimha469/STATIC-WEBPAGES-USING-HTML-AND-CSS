@@ -1,0 +1,166 @@
+*{
+    font-family: Arial, sans-serif;
+}
+.header-nav-flex-container{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.list-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-style li{
+    list-style: none;
+    margin-left: 25px;
+}
+/* SECTION-1 */
+.section1-page-404{
+    background-color: darkblue;
+    text-align: center;
+    padding:40px;
+    /* font-family:'Roboto'; */
+}
+.heading-page-404-style{
+    color:gold;
+    font-size: 40px;
+    margin: 0%;
+    padding: 0%;
+}
+.para-style{
+    color:white;
+    margin:0%;
+    padding:0%;
+}
+/* SECTION-2 */
+.section2-container-style{
+    text-align:center;
+    padding:20px 0px 80px 0px;
+}
+.section2-404-style{
+    font-size:80px;
+    margin:0%;
+    padding:0%;
+    color:darkblue
+}
+.content-style{
+    margin:0%;
+    padding:0%;
+    font-size: 20px;
+}
+.section2-container-style input{
+    width:200px;
+    padding:10px;
+    margin:10px 0px 30px 0px;
+    background-color:rgb(241, 234, 234);
+    border-style: none;
+}
+.section2-container-style a{
+    text-decoration: none;
+    color:white;
+    background-color:gold;
+    padding:10px 15px 10px 15px;
+    font-size:13px;
+}
+/* SECTION-3 */
+.section3-style{
+    background-color: rgb(216, 209, 209);
+ }
+ .section3-div-flex-container{
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 25px;
+ }
+ /* FOOTER */
+ .footer-container-style{
+    background-color: blue;
+    padding:10px 0px 30px 0px;
+    }
+.footer-div-flex-container{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    gap:30px;
+}
+ 
+ .footer-cntacts-us-div-style{
+    color:white;
+ }
+ .footer-cntacts-us-div-style p{
+    color:#ccc;
+ }
+ .footer-flex-card{
+    display:flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+ }
+ .footer-flex-card h4{
+    margin:0%;
+    padding:0%;
+ }
+ .footer-flex-card p{
+    margin:0%;
+    padding:0%;
+ }
+ .contacts-icon-style{
+    background-color:rgba(0, 76, 255, 0.783);
+    color:gold;
+    padding:13px;
+    border-radius:50%;
+    margin-right:10px;
+
+ }
+ .our-services-style{
+    margin-top:10px;
+    color:white;
+ }
+ .services-flex-container{
+    display:flex;
+    color:#ccc;
+ }
+ .services-flex-container ul{
+    margin:0px 20px 30px 0px;
+    padding:0%;
+    
+ }
+ .services-flex-container li{
+    padding-top:10px;
+    
+ }
+.services-flex-container i{
+    color:gold;
+    margin-right: 10px;
+}
+.offer-discount{
+    border:1px  rgb(181, 178, 178);
+    width:270px;
+    height:160px;
+    color:white;
+    padding:20px 0px 0px 40px;
+    margin-bottom:20px;
+    border-style: dashed;
+    
+}
+.offer-discount h2{
+    margin:0%
+   
+}
+.offer-discount p{
+    margin-top: 40px;
+}
+.h4-style{
+    margin:0%;
+    padding-left: 50px;
+}
+.percent-style{
+    font-size:55px;
+    color:gold;
+
+}
+.code-style{
+    color:gold;
+}
+

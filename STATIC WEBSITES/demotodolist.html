@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Two-Form To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .form-section {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .todo-item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+    .priority-high {
+      color: red;
+    }
+    .priority-medium {
+      color: orange;
+    }
+    .priority-low {
+      color: green;
+    }
+    button {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Form 1: To-Do List Display -->
+  <div class="form-section">
+    <h2>To-Do List</h2>
+    <div id="todoList">
+      <p id="noTasks">No tasks added yet.</p>
+    </div>
+  </div>
+
+  <!-- ✅ Form 2: Task Entry Form -->
+  <div class="form-section">
+    <h2>Add Task</h2>
+    <form id="taskForm" onsubmit="event.preventDefault(); addToDo();">
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <input type="text" id="title" placeholder="Title" required>
+      <select id="priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button type="submit">Add to To-Do List</button>
+    </form>
+  </div>
+
+  <script>
+    const todoList = document.getElementById("todoList");
+    const noTasks = document.getElementById("noTasks");
+
+    function addToDo() {
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const title = document.getElementById("title").value;
+      const priority = document.getElementById("priority").value;
+
+      // Hide "no tasks" text
+      noTasks.style.display = "none";
+
+      const taskDiv = document.createElement("div");
+      taskDiv.className = "todo-item";
+
+      taskDiv.innerHTML = `
+        <div>
+          <strong>Title:</strong> <span class="task-title">${title}</span><br>
+          <strong>Date:</strong> <span class="task-date">${date}</span><br>
+          <strong>Time:</strong> <span class="task-time">${time}</span><br>
+          <strong>Priority:</strong> <span class="task-priority priority-${priority}">${priority.toUpperCase()}</span>
+        </div>
+        <button onclick="editTask(this)">Edit</button>
+      `;
+
+      todoList.appendChild(taskDiv);
+
+      // Clear form
+      document.getElementById("taskForm").reset();
+    }
+
+    function editTask(button) {
+      const taskDiv = button.parentElement;
+
+      const titleSpan = taskDiv.querySelector(".task-title");
+      const dateSpan = taskDiv.querySelector(".task-date");
+      const timeSpan = taskDiv.querySelector(".task-time");
+      const prioritySpan = taskDiv.querySelector(".task-priority");
+
+      const currentTitle = titleSpan.textContent;
+      const currentDate = dateSpan.textContent;
+      const currentTime = timeSpan.textContent;
+      const currentPriority = prioritySpan.textContent.toLowerCase();
+
+      // Replace content with inputs
+      taskDiv.innerHTML = `
+        <input type="text" class="edit-title" value="${currentTitle}">
+        <input type="date" class="edit-date" value="${currentDate}">
+        <input type="time" class="edit-time" value="${currentTime}">
+        <select class="edit-priority">
+          <option value="high" ${currentPriority === "high" ? "selected" : ""}>High</option>
+          <option value="medium" ${currentPriority === "medium" ? "selected" : ""}>Medium</option>
+          <option value="low" ${currentPriority === "low" ? "selected" : ""}>Low</option>
+        </select>
+        <button onclick="saveEdit(this)">Save</button>
+      `;
+    }
+
+    function saveEdit(button) {
+      const taskDiv = button.parentElement;
+
+      const newTitle = taskDiv.querySelector(".edit-title").value;
+      const newDate = taskDiv.querySelector(".edit-date").value;
+      const newTime = taskDiv.querySelector(".edit-time").value;
+      const newPriority = taskDiv.querySelector(".edit-priority").value;
+
+      taskDiv.innerHTML = `
+        <div>
+          <strong>Title:</strong> <span class="task-title">${newTitle}</span><br>
+          <strong>Date:</strong> <span class="task-date">${newDate}</span><br>
+          <strong>Time:</strong> <span class="task-time">${newTime}</span><br>
+          <strong>Priority:</strong> <span class="task-priority priority-${newPriority}">${newPriority.toUpperCase()}</span>
+        </div>
+        <button onclick="editTask(this)">Edit</button>
+      `;
+    }
+  </script>
+
+</body>
+</html>

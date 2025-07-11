@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-title {
+      text-align: center;
+      background-color: #0056b3;
+      color: white;
+      padding: 60px 20px 20px;
+    }
+
+    .section-title h1 {
+      margin-bottom: 10px;
+      font-size: 36px;
+    }
+
+    .section-title p {
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 40px 80px;
+      background-color: #fff;
+    }
+
+    .service-box {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .service-box:hover,
+    .service-box.active {
+      background-color: #0056b3;
+      color: white;
+      cursor: pointer;
+    }
+
+    .service-box img {
+      width: 40px;
+      margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .service-box p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .service-box.active p,
+    .service-box:hover p {
+      color: #eee;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section-title">
+    <h1>SERVICES GRID</h1>
+    <p>Home / Services Grid</p>
+  </div>
+
+  <div class="grid-container">
+    <div class="service-box active">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/engine.png" alt="Engine Repairs">
+      <h3>Engine Repairs</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/electrical.png" alt="Electrical">
+      <h3>Electrical</h3>
+      <p>Aliquam ornare, purus id auctor lobortis egestas purus.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/pipe.png" alt="Plumbing">
+      <h3>Plumbing</h3>
+      <p>Maecenas id eros sagittis, varius erat nec, tincidunt ex.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Repair House">
+      <h3>Repair House</h3>
+      <p>Ut convallis arcu, gravida scelerisque placerat congue arcu.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/paint-roller.png" alt="Wall Paint">
+      <h3>Wall Paint</h3>
+      <p>Morbi enim nulla, egestas egestas condimentum orci ac.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/maintenance.png" alt="Home Maintenance">
+      <h3>Home Maintenance</h3>
+      <p>Proin iaculis malesuada leo, quis finibus nibh pretium sit.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/wrench.png" alt="Installation">
+      <h3>Installation</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="service-box">
+      <img src="https://img.icons8.com/ios-filled/50/000000/gardening.png" alt="Garden Repairs">
+      <h3>Garden Repairs</h3>
+      <p>Maecenas euismod eros enim, id rhoncus arcu aliquet.</p>
+    </div>
+  </div>
+
+</body>
+</html>
